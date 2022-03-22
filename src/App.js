@@ -1,21 +1,19 @@
-import React, {useState} from "react";
-import React from "react";
+import React, { useState } from "react";
+import { Route, BrowserRouter } from "react-router-dom";
 import Rating from "./Rating";
 import Update from "./Update";
 
-
 function App() {
-  
-    return (
-      <div>
-          <Route exact path="/">
-            <Rating/>
-          </Route>
-          <Route path="/rating">
-            <Update/>
-          </Route>
-      </div>
-    );
-};
+  return (
+    <BrowserRouter>
+      <Route exact path="/">
+        <Rating />
+      </Route>
+      <Route exact path="/rating/:dayName">
+        <Update />
+      </Route>
+    </BrowserRouter>
+  );
+}
 
 export default App;
