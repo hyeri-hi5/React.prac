@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Update from "./Update";
@@ -35,7 +35,7 @@ function Rating() {
             {Array.from({ length: 5 }, (item, idx) => {
               return (
                 <Circle
-                  style={{ backgroundColor: idx < x.rate ? "orange" : "#ddd" }}
+                  style={{ backgroundColor: idx < x.rate ? "#F7866E" : "#ddd" }}
                 />
               );
             })}
@@ -52,13 +52,18 @@ function Rating() {
 }
 
 const Wrap = styled.div`
+  background-color: white;
   max-width: 450px;
   width: 30vw;
-  height: 80vh;
+  height: 73vh;
   margin: 40px auto;
   padding: 20px 0;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-family: 'SuncheonB';
+  h1 {
+    margin: 30px auto;
+  }
 `;
 
 const Container = styled.div`
@@ -69,8 +74,7 @@ const Container = styled.div`
   width: 100%;
   p {
     margin: 0 0.6em 0 0;
-    font-size: large;
-    font-weight: bold;
+    font-size: 20px;
   }
 `;
 
@@ -82,13 +86,13 @@ const Circle = styled.div`
 `;
 
 const Triangle = styled.div`
-  border-color: purple;
+  border-color: #F7B36E;
   width: 0;
   height: 0;
   border-top: 1rem solid transparent;
   border-bottom: 1rem solid transparent;
-  border-left: 1.6rem solid purple;
-  color: purple;
+  border-left: 1.6rem solid #F7B36E;
+  color: #F7B36E;
   cursor: pointer;
 `;
 

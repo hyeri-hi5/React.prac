@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import Rating from "./Rating";
 import Update from "./Update";
+import './App.css';
 
 function App() {
   return (

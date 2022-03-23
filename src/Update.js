@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Update() {
   const history = useHistory();
@@ -12,8 +14,9 @@ function Update() {
     <>
       <Box>
         
-          <h3 style={{ textAlign: "center" }}>
-            <Mini>{params.dayName}</Mini>평점 남기기</h3>
+          <h3 style={{ textAlign: "center", fontFamily: "SuncheonB"}}>
+            <Mini>{params.dayName}</Mini><div style={{margin: '5px 0 0 0'}}>평점 남기기</div>
+          </h3>
         
 
         <RatingUpdate>
@@ -24,7 +27,7 @@ function Update() {
                 onClick={() => {
                   setRate(idx + 1);
                 }}
-                style={{ backgroundColor: idx < rate ? "orange" : "#ddd" }}
+                style={{ backgroundColor: idx < rate ? "#F7866E" : "#ddd" }}
               />
             );
           })}
@@ -33,9 +36,10 @@ function Update() {
         <Goback
           onClick={() => {
             history.push(`/`);
-          }}
+          }} className = "Goback display-linebreak"
         >
-          평점 남기기
+          <p>평점</p>
+          <p>남기기</p>
         </Goback>
       </Box>
     </>
@@ -43,26 +47,29 @@ function Update() {
 }
 
 const Box = styled.div`
+  background-color: white;
   max-width: 350px;
   width: 80vw;
-  height: 90vh;
+  height: 40vh;
   margin: 5vh auto;
   padding: 5vh 5vw;
   border: 1px solid #ddd;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 20px;
   h3 {
     display: flex;
+    text-align: center;
   }
 `;
 
 const Mini = styled.div`
   color: #fff;
-  font-weight: 900;
-  background: orange;
-  padding: 0.2rem;
+  font-weight: 500;
+  background: #F7B36E;
+  padding: 0.4rem;
   border-radius: 5px;
-  margin: 0 0.6rem 0 0; 
+  margin: 0 1rem 0 1.5rem; 
+  font-family: 'SuncheonB'
 `;
 
 const RatingUpdate = styled.div`
@@ -78,18 +85,25 @@ const Round = styled.div`
   height: 30px;
   border-radius: 30px;
   margin: 5px;
-  background-color: orange;
+  background-color: #F7866E;
 `;
 
 const Goback = styled.button`
-  width: 100%;
-  background-color: purple;
+  width: 50%;
+  background-color: #9734B0;
   border: none;
   border-radius: 5px;
-  padding: 1rem;
+  margin: 2rem auto;
+  display: block;
+  padding: 0.5rem;
   color: #fff;
-  font-size: medium;
+  font-size: smaller;
+  font-weight: 600
   cursor: pointer;
+  p {margin: 0 0 3px 0;
+    font-family: 'SuncheonB'
+  }
+  
 `;
 
 export default Update;
